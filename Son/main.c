@@ -9,11 +9,22 @@ void Encrypt(char* plain, char* key, char* cypher)
 	}
 }
 
+int exitCode(HANDLE hfiles[], int handlesNum)
+{
+	int exitCode = 0;
+	for (int i = 0; i < handlesNum; i++)
+	{
+		exitCode |= closeFile(&hfiles[i]);
+	}
+	return exitCode;
+}
+
 int main(int argc, char* argv[])
 {
 	HANDLE plaintextFile = NULL;	// handle to the plain text file
 	HANDLE keyFile = NULL;			// handle to the key text file
 	HANDLE encryptedMessageFile = NULL;	// handle to the plain text file
+	HANDLE hfiles[3] = { 0 }; //array of the handles to use when exitting the code
 
 	char plainTxt[BUFFSIZE + 1] = { 0 }, key[BUFFSIZE + 1] = { 0 }, cypherTxt[BUFFSIZE + 1] = { 0 };
 	
@@ -23,63 +34,56 @@ int main(int argc, char* argv[])
 		//first file failed
 		return(1);
 	}
-	
+	hfiles[0] = plaintextFile;
 	if (openFile(&keyFile, argv[3], READ))
 	{
 		//first file succeeded, second file failed
-		closeFile(&plaintextFile);
-		return(1);
+		return exitCode(hfiles, 1);
 	}
+	hfiles[1] = keyFile;
 	if (openFile(&encryptedMessageFile, "Encrypted_message.txt", WRITE))
 	{
 		//first and second file succeeded, third file failed
-		closeFile(&plaintextFile);
-		closeFile(&keyFile);
-		return(1);
+		return exitCode(hfiles, 2);
 	}
+	hfiles[2] = encryptedMessageFile;
 
-	int offset = atoi(argv[2]);
+	//move file pointer to asked offset
+	if (MoveFilePointer(&plaintextFile, atoi(argv[2])))
+	{
+		//exit
+		return exitCode(hfiles, 3);
+	}
+	if (MoveFilePointer(&encryptedMessageFile, atoi(argv[2])))
+	{
+		//exit
+		return exitCode(hfiles, 3);
+	}
 
 	//read text from plain text file.
 	if (ReadFromFile(plaintextFile, plainTxt, BUFFSIZE))
 	{
 		//exit
-		closeFile(&plaintextFile);
-		return(1);
+		return exitCode(hfiles, 3);
 	}
 	
 	//read key from key file
 	if (ReadFromFile(keyFile, key, BUFFSIZE))
 	{
 		//exit
-		closeFile(&plaintextFile);
-		return(1);
+		return exitCode(hfiles, 3);
 	}
 
 	//encrypt data
-	Encrypt(plainTxt, key, cypherTxt);
+ 	Encrypt(plainTxt, key, cypherTxt);
 
-	//move file pointer to asked offset
-	MoveFilePointer(&encryptedMessageFile, atoi(argv[2]));
-
+	
 	//write encrypted message to dest file
-	WriteToFile(encryptedMessageFile, cypherTxt, strlen(cypherTxt));
+	if (WriteToFile(encryptedMessageFile, cypherTxt, strlen(cypherTxt)))
+	{
+		return exitCode(hfiles, 3);
+	}
 
-	//close all file handles
-	if (closeFile(&plaintextFile))
-	{
-		closeFile(&keyFile);
-		closeFile(&encryptedMessageFile);
-		return(1);
-	}
-	if (closeFile(&keyFile))
-	{
-		closeFile(&encryptedMessageFile);
-		return(1);
-	}
-	if (closeFile(&encryptedMessageFile))
-	{
-		return(1);
-	}
-	return(0);
+	//close all file handles and exit
+	return exitCode(hfiles, 3);
 }
