@@ -1,0 +1,23 @@
+﻿  FileHandlingFather.c
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 1 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 2 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 3 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4273: 'OpenFile': inconsistent dll linkage
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winbase.h(2902,1): message : see previous definition of 'OpenFile'
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(14,19): warning C4133: 'function': incompatible types - from 'TCHAR [1]' to 'char *const '
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(14,39): warning C4047: 'function': 'const size_t' differs in levels of indirection from 'char [17]'
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(14,21): warning C4024: 'sprintf_s': different types for formal and actual parameter 2
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(13,1): warning C4047: 'initializing': 'TCHAR' differs in levels of indirection from 'void *'
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(140,11): warning C4101: 'buf': unreferenced local variable
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(171,11): warning C4101: 'buf': unreferenced local variable
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.c(205,8): warning C4101: 'writtenMassageLen': unreferenced local variable
+  main.c
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 1 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 2 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4028: formal parameter 3 different from declaration
+C:\Users\Yarden\source\repos\Ex1\Father\FileHandlingFather.h(46,60): warning C4273: 'OpenFile': inconsistent dll linkage
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winbase.h(2902,1): message : see previous definition of 'OpenFile'
+C:\Users\Yarden\source\repos\Ex1\Father\main.c(12,47): warning C4311: 'type cast': pointer truncation from 'PLARGE_INTEGER' to 'DWORD'
+  Generating Code...
+     Creating library C:\Users\Yarden\source\repos\Ex1\x64\Debug\Father.lib and object C:\Users\Yarden\source\repos\Ex1\x64\Debug\Father.exp
+  Father.vcxproj -> C:\Users\Yarden\source\repos\Ex1\x64\Debug\Father.exe
