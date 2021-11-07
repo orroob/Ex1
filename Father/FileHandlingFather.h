@@ -4,33 +4,23 @@
 #include "HardCodedDataFather.h"
 
 /// <summary>
-/// This function creates a file using winAPI's CreateFileA function.
-///
-/// ASSUMPTIONS: 
-///		access mode is either GENERIC_WRITE or GENERIC_READ.
-///		share mode is 0 (no share).
-///		creation disposition is either OPEN_ALWAYS or OPEN_EXISTING, depending on the access mode.
+/// This function creates a process in main scope.
 /// </summary>
-/// <param name="hfile"> - a HANDLE* object to which the function will place the created file handle. should be initiated to NULL.</param>
-/// <param name="fileName"> - a char* object containing the file's name.</param>
-/// <param name="accessMode"> - desired access mode to the file. 0-read; 1-write</param>
-/// <returns>returns 0 if secceeded, 1 otherwise</returns>
-
+/// <param name="txt_file_name"> - a char* object pointing to text file.</param>
+/// <param name="offset"> - the offset in chars from which would like to read from or write to.</param>
+/// <param name="key_file_name"> - a char* object pointing to key file </param>
+/// <returns> do not return</returns>
 void CreateProcessSimpleMain(char* txt_file_name, DWORD offset, char* key_file_name);
-/// <summary>
-/// This function creates a file using winAPI's CreateFileA function.
-///
-/// ASSUMPTIONS: 
-///		access mode is either GENERIC_WRITE or GENERIC_READ.
-///		share mode is 0 (no share).
-///		creation disposition is either OPEN_ALWAYS or OPEN_EXISTING, depending on the access mode.
-/// </summary>
-/// <param name="hfile"> - a HANDLE* object to which the function will place the created file handle. should be initiated to NULL.</param>
-/// <param name="fileName"> - a char* object containing the file's name.</param>
-/// <param name="accessMode"> - desired access mode to the file. 0-read; 1-write</param>
-/// <returns>returns 0 if secceeded, 1 otherwise</returns>
 
+/// <summary>
+/// This function creates process.
+///
+/// </summary>
+/// <param name="CommandLine"> - object containing the commandline which is given to process.</param>
+/// <param name="ProcessInfoPtr"> - object containing the process information.</param>
+/// <returns> returns boolean different than zero if succeeds</returns>
 BOOL CreateProcessSimple(LPTSTR CommandLine, PROCESS_INFORMATION* ProcessInfoPtr);
+
 /// <summary>
 /// This function creates a file using winAPI's CreateFileA function.
 ///
