@@ -9,7 +9,7 @@
 /// <param name="txt_file_name"> - a char* object pointing to text file.</param>
 /// <param name="offset"> - the offset in chars from which would like to read from or write to.</param>
 /// <param name="key_file_name"> - a char* object pointing to key file </param>
-/// <returns> do not return</returns>
+/// <returns> does not return</returns>
 void CreateProcessSimpleMain(char* txt_file_name, DWORD offset, char* key_file_name);
 
 /// <summary>
