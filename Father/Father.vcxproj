@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)\..\Share;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -139,12 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FileHandlingFather.c" />
+    <ClCompile Include="FileHandling.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="ProcessHandling.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FileHandlingFather.h" />
-    <ClInclude Include="HardCodedDataFather.h" />
+    <ClInclude Include="FileHandling.h" />
+    <ClInclude Include="HardCodedData.h" />
+    <ClInclude Include="ProcessHandling.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

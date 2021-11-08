@@ -4,4 +4,9 @@
     <LocalDebuggerCommandArguments>./txt.txt ./key.txt</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>test_plain.txt test_key.txt</LocalDebuggerCommandArguments>
+  </PropertyGroup>
 </Project>

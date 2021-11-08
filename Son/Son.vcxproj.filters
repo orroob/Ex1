@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Shared Header Files">
+      <UniqueIdentifier>{8d476b0f-67cf-43bc-b2fa-54dfe96a18a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared Source Files">
+      <UniqueIdentifier>{832b63ab-6a32-4023-91c0-2c6fa882a0e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

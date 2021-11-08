@@ -13,20 +13,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Shared Header Files">
+      <UniqueIdentifier>{e66be6d6-0c3a-42d3-9271-29508d8593f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared Source Files">
+      <UniqueIdentifier>{0a01a187-57c5-4127-944c-9fe74e9a7303}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileHandlingFather.c">
+    <ClCompile Include="ProcessHandling.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandling.c">
+      <Filter>Shared Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HardCodedDataFather.h">
+    <ClInclude Include="HardCodedData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileHandlingFather.h">
+    <ClInclude Include="FileHandling.h">
+      <Filter>Shared Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessHandling.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
